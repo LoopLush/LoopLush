@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loop Lush</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f8edf6;
+      color: #5d4b59;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #9b7e93;
+    }
+
+    .logo img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin-left: 25px;
+      color: #7b6174;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #c58fb7;
+    }
+
+    section {
+      padding: 100px 8%;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      background: linear-gradient(to bottom right, #fbeff8, #f3dff0);
+    }
+
+    .hero-text h1 {
+      font-size: 4rem;
+      color: #9f7b9b;
+      margin-bottom: 15px;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      max-width: 500px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .hero-text button {
+      padding: 14px 28px;
+      border: none;
+      border-radius: 40px;
+      background: #cda4c8;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 8px 20px rgba(205,164,200,0.3);
+    }
+
+    .hero-text button:hover {
+      transform: translateY(-3px);
+      background: #b98db4;
+    }
+
+    .hero-image img {
+      width: 350px;
+      border-radius: 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #9f7b9b;
+    }
+
+    .about {
+      background: #fff7fc;
+      border-radius: 30px;
+      line-height: 1.9;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .products-grid,
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 25px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #9f7b9b;
+      margin-bottom: 10px;
+    }
+
+.gallery-grid img {
+      width: 100%;
+      border-radius: 25px;
+      transition: 0.3s;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    
+
+    footer {
+      background: #e7cde3;
+      padding: 40px 8%;
+      text-align: center;
+      color: #6d5468;
+    }
+
+    footer a {
+      color: #6d5468;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media(max-width: 900px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 140px;
+      }
+
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+.order-banner{
+  text-align:center;
+  padding:80px 20px;
+  background:linear-gradient(to right,#f3dff0,#fbeff8);
+  border-radius:30px;
+  margin:50px 8%;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.order-banner h2{
+  font-size:3rem;
+  color:#9f7b9b;
+  margin-bottom:15px;
+}
+
+.order-banner p{
+  font-size:1.2rem;
+  color:#6d5468;
+  margin-bottom:25px;
+}
+
+.order-banner a{
+  display:inline-block;
+  padding:14px 30px;
+  background:#cda4c8;
+  color:white;
+  text-decoration:none;
+  border-radius:40px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.order-banner a:hover{
+  background:#b98db4;
+  transform:translateY(-3px);
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://media.discordapp.net/attachments/1378625947443396730/1501934562715107338/Loop_Lush.jpg?ex=69fde110&is=69fc8f90&hm=2948a4964a3a4864a39cf834f438a98a47b17e53c796d01c65cda5bb16537ea1&=&format=webp&width=591&height=591" alt="Loop Lush Logo">
+      Loop Lush
+    </div>
+
+    <nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="shop.html">Shop</a>
+</nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Handmade With Love</h1>
+      <p>
+        Welcome to loopLush ⋆˚꩜｡~ 
+        A cozy crochet brand creating soft, aesthetic, and handmade crochet products. 
+        Each stitch is made with creativity, comfort, and love.
+        DM to order your product݁ ˖Ი𐑼⋆
+        Your order can be customised based on your colour preferences!
+      </p>
+
+      <button onclick="window.location.href='https://instagram.com/loop.lush_'">
+        Visit our Instagram
+      </button>
+      <button onclick="window.location.href='Shop.html'" style="margin-left:10px;">
+  View Shop
+</button>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://media.discordapp.net/attachments/1378625947443396730/1501934562715107338/Loop_Lush.jpg?ex=69fde110&is=69fc8f90&hm=2948a4964a3a4864a39cf834f438a98a47b17e53c796d01c65cda5bb16537ea1&=&format=webp&width=591&height=591" alt="Loop Lush Logo">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="title">About Us</h2>
+
+    <div class="about">
+      <p>
+        Welcome to our page!! We sell cute, cozy and aesthetic crochet products on here. We make sure each stitch is handled and made with care and love. Hope you enjoy our products and work. Thank you and lots of love <33
+      </p>
+    </div>
+  </section>
+
+  <section id="products">
+    <h2 class="title">What we sell</h2>
+
+    <div class="products-grid">
+      <div class="card">
+        <img src="https://media.discordapp.net/attachments/1378625947443396730/1501938827567173783/689337053_1950768305556517_5692901594910109009_n.png?ex=69fde509&is=69fc9389&hm=dbb610dea98d15a350844ad67e46e1fca619c8e0191407f9bccbb41e32447137&=&format=webp&quality=lossless&width=1035&height=778" alt="Gallery 1">
+        <h3> Crochet Coasters </h3>
+        <p>Soft handmade coasters with adorable aesthetics.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images-ext-1.discordapp.net/external/fH_4iZNBEm_i-8YCdbAKGnKf7LzTtixMENqdv4ZpTP0/%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D106%26ccb%3D7-5%26_nc_sid%3Dfc17b8%26efg%3DeyJxZV9ncm91cHMiOlsiaWdkX2Jlc3RfZWZmb3J0X2ltYWdlOnRlc3QiXX0%253D%26_nc_ohc%3D_13LxjByPEMQ7kNvwE3Gkkm%26_nc_oc%3DAdrFw7DAwfvNXn1DijY-lROIFX_EzHkhcIFPQdvSYt6vF42GCVlTZJblSHwhVcPHbUAA_DjBzot2xlT-WUWNeztJ%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent.cdninstagram.com%26oh%3D03_Q7cD5QFnUyQfUhDp70Tajck-4Xn76g5m92zcNWXlfWwWOtCtqQ%26oe%3D6A240457/https/scontent.cdninstagram.com/v/t1.15752-9/684281239_1281878587458467_1111044547930087627_n.jpg?format=webp&width=584&height=779" alt="Gallery 2">
+        <h3>Other Products</h3>
+        <p>Keychains, Accessories and more~</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images-ext-1.discordapp.net/external/tcSw3mbU60tYCbG_C7IInahMb_qL8QhXzYY2ZIk4Tig/%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D111%26ccb%3D7-5%26_nc_sid%3Dfc17b8%26efg%3DeyJxZV9ncm91cHMiOlsiaWdkX2Jlc3RfZWZmb3J0X2ltYWdlOnRlc3QiXX0%253D%26_nc_ohc%3D3JEgIbvnD5AQ7kNvwG2m13t%26_nc_oc%3DAdqAg85AwUQ0MR-BAG90UmGBDn3A3h2geV3DduZP6R17B-T_SZ2iQHGzXkAJnyQ0UyGh5QJ9I0GjC9UxVHg3WXw2%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent.cdninstagram.com%26oh%3D03_Q7cD5QEV9ruA_-Lr1HyReLNIgmLF-7ElcZkdWDT6vzd7cjdgwA%26oe%3D6A24094D/https/scontent.cdninstagram.com/v/t1.15752-9/681480236_967027699619530_7221053060530223581_n.jpg?format=webp&width=1035&height=775" alt="Loop Lush Crochet">
+        <h3>Crochet Flowers</h3>
+        <p>Handmade with love!</p>
+      </div>
+    </div>
+  </section>
+
+<section class="order-banner">
+  <h2>Want To Place An Order?</h2>
+
+  <p>
+    DM our Instagram account to order your favorite crochet products ♡
+  </p>
+
+  <a href="https://instagram.com/loop.lush_" target="_blank">
+    Message Us On Instagram
+  </a>
+</section>
+
+<footer>
+    <p>
+      © 2026 Loop Lush • Handmade Crochet Creations <br><br>
+      Instagram: <a href="https://instagram.com/loop.lush_">@loop.lush_</a>
+    </p>
+  </footer>
+
+</body>
+</html>
